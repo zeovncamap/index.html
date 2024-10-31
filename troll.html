@@ -1,0 +1,59 @@
+Made by Nguyễn Quang Huy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Are you LGBT+?</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Are you LGBT+?</h1>
+    <div class="buttons">
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+
+        // Khi di chuột vào nút "No", nó sẽ di chuyển
+        noBtn.addEventListener("mouseover", () => {
+            const randomX = Math.floor(Math.random() * (window.innerWidth - noBtn.clientWidth));
+            const randomY = Math.floor(Math.random() * (window.innerHeight - noBtn.clientHeight));
+            noBtn.style.position = "absolute";
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        });
+
+        // Khi nhấn nút "Yes", hiện thông báo
+        yesBtn.addEventListener("click", () => {
+            alert("Cảm ơn bạn đã thành thật! Tôi biết là bạn LGBT+ mà :>>>");
+        });
+    </script>
+</body>
+</html>
